@@ -1,0 +1,85 @@
+/* Navbar main wrapper styles - now fixed at the top */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+  background: #02283a;
+  border: 1px solid #3a5a6a;
+  padding: 0;
+  margin: 0;
+}
+
+/* Container for logo, links, and auth */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100vw;
+  padding: 0.5rem 2rem;
+}
+
+/* Logo styles (left side) */
+.navbar-logo {
+  color: #ffc700;
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  font-family: inherit;
+}
+
+/* Navigation links (center) */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.navbar-links li:hover {
+  color: #ffc700;
+}
+
+/* Auth links (right side) */
+.navbar-auth {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-auth span {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.navbar-auth span:hover {
+  color: #ffc700;
+}
+
+/* Make all navbar links white by default */
+.navbar-links a,
+.navbar-auth a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.navbar-links a:hover,
+.navbar-auth a:hover {
+  color: #ffc700;
+} 
