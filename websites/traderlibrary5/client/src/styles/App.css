@@ -36,7 +36,7 @@
   position: relative;
 }
 .footer-column:not(:last-child) {
-  border-right: 1.5px solid #2a4a6a;
+  border-right: 1px solid rgba(229, 231, 235, 0.3); /* Even less obvious line */
 }
 @media (max-width: 700px) {
   .footer-sections {
@@ -44,15 +44,15 @@
   }
   .footer-column:not(:last-child) {
     border-right: none;
-    border-bottom: 1.5px solid #2a4a6a;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.3); /* Even less obvious line */
   }
 }
 
 /* Navbar mobile dropdown separation line */
 @media (max-width: 700px) {
   .navbar-links.show {
-    border-bottom: 1.5px solid #2a4a6a;
-    border-top: 1.5px solid #2a4a6a;
+    border-bottom: 1.5px solid #e5e7eb;
+    border-top: 1.5px solid #e5e7eb;
   }
 } 
 

@@ -76,7 +76,7 @@
   font-size: 0.95rem; /* Match link font size */
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0rem;
   margin-left: 1.5rem; /* Add space between links and auth */
 }
 
@@ -107,6 +107,16 @@
 .navbar-logo:hover,
 .navbar-links a:hover,
 .navbar-auth a:hover {
+  color: #3b82f6 !important;
+}
+
+/* Active nav link style */
+.navbar-links a.nav-active,
+.navbar-links .nav-active {
+  color: #3b82f6 !important;
+}
+
+.navbar-auth a.nav-active {
   color: #3b82f6 !important;
 }
 
@@ -178,6 +188,7 @@
   }
   .navbar-links.show {
     display: flex;
+    background: #02283a;
   }
   .navbar-links li {
     font-size: 0.95rem;
