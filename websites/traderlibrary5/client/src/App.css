@@ -1,8 +1,161 @@
-#root {
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root, .app-root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden; /* Remove horizontal scroll */
+}
+
+body, #root, .app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1; /* Pushes the footer to the bottom */
+  width: 100%;
+}
+
+footer {
+  background-color: #003366; /* Example blue */
+  color: white;
+  margin-top: auto;
+  width: 100%;
+}
+
+/* All homepage sections should use width: 100% (not 100vw) */
+.hero-section,
+.reason-section,
+.why-section,
+.explore-section,
+.latest-posts-section {
+  width: 100%;
+  position: relative;
+  padding: 3rem 2rem;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* Footer styles */
+.footer {
+  background: #003049;
+  color: #fff;
+  padding: 1.2rem 0 0.7rem 0; /* Reduced padding */
+  border-top: 1px solid #1a2633;
+  margin-top: auto;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  font-size: 0.92rem; /* Smaller base font size for footer */
+}
+
+.footer-content {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 1.2rem; /* Reduced side padding */
+  /* Content stays centered and boxed */
+}
+
+.footer-sections {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem; /* Reduced gap */
+  margin-bottom: 1.5rem; /* Reduced margin */
+  padding-bottom: 1.2rem; /* Reduced padding */
+  border-bottom: 1px solid #1a2633;
+}
+
+.footer-column h3 {
+  color: #ffc700;
+  margin-bottom: 0.7rem;
+  font-size: 1rem; /* Smaller heading */
+  font-weight: 700;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.92rem; /* Smaller list text */
+}
+
+.footer-column li {
+  margin-bottom: 0.3rem;
+}
+
+.footer-column a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-size: 0.92rem; /* Smaller link text */
+}
+
+.footer-column a:hover,
+.footer-column ul li a:hover {
+  color: #3b82f6 !important;
+  background: none !important;
+  border: none !important;
+}
+
+.footer-brand {
   text-align: center;
+  margin-bottom: 1.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #1a2633;
+}
+
+.footer-brand h2 {
+  color: #ffc700;
+  margin-bottom: 0.7rem;
+  font-size: 1.2rem; /* Smaller brand title */
+  font-weight: 700;
+}
+
+.footer-brand p {
+  color: #fff;
+  max-width: 600px;
+  margin: 0 auto 1rem auto;
+  line-height: 1.4;
+  font-size: 0.92rem; /* Smaller brand text */
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Reduced gap */
+  margin-top: 0.7rem;
+}
+
+.social-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.3rem 0.7rem; /* Smaller padding */
+  border: 1px solid #1a2633;
+  border-radius: 4px;
+  transition: all 0.2s;
+  font-size: 0.92rem; /* Smaller social link text */
+}
+
+.social-link:hover {
+  color: #3b82f6 !important;
+  background: none !important;
+  border-color: #3b82f6 !important;
+}
+
+.footer-copyright {
+  text-align: center;
+  color: #ccc;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  padding: 0.3rem 0;
 }
 
 .logo {
@@ -33,6 +186,15 @@
   }
 }
 
+@media (max-width: 700px) {
+  .footer-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    text-align: center;
+  }
+}
+
 .card {
   padding: 2em;
 }
@@ -41,153 +203,16 @@
   color: #888;
 }
 
-/* Home page section styles */
-.welcome-section {
-  background: #f5f7fa;
+/* Clean home page styles */
+.home {
   padding: 2rem;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-.reason-section {
-  background: #e0f7fa;
-  padding: 2rem;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+.home h1 {
+  color: #333;
+  margin-bottom: 1rem;
 }
 
-.why-section {
-  background: #fff3e0;
-  padding: 2rem;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-/* Stacked card layout for homepage */
-.stacked-card {
-  width: 100%;
-  max-width: 600px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(2,40,58,0.08);
-  margin: 2rem 0 0 0;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.stacked-card h1, .stacked-card h2 {
-  margin-top: 0;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 1.2rem;
-  margin-top: 1.2rem;
-}
-
-/* Explore section grid */
-.explore-row {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 0.7rem 0;
-}
-.explore-item {
-  background: #02283a;
-  color: #ffc700;
-  border-radius: 8px;
-  padding: 1rem 1.2rem;
-  font-weight: 600;
-  font-size: 1.1rem;
-  min-width: 100px;
-  box-shadow: 0 2px 8px rgba(2,40,58,0.08);
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
-.explore-item:hover {
-  background: #ffc700;
-  color: #02283a;
-}
-
-/* Blog list spacing */
-.blog-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.blog-list li {
-  margin-bottom: 0.7rem;
-  font-size: 1.08rem;
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  justify-content: center;
-}
-
-/* Welcome card - truly end-to-end full width */
-.welcome-card {
-  width: 100vw;
-  margin: 2rem 0 0 0;
-  background: #f5f7fa;
-  border-radius: 0;
-  box-shadow: 0 4px 24px rgba(2,40,58,0.08);
-  padding: 2rem 1.5rem;
-  text-align: center;
-  font-size: 1.15rem;
-  font-weight: 500;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  transform: translateX(-50%);
-}
-
-/* End-to-end full width cards for homepage sections (except hero) */
-.reason-card, .why-card, .explore-card, .signal-card, .join-card, .blog-card {
-  width: 100vw;
-  margin: 2rem 0 0 0;
-  background: #fff;
-  border-radius: 0;
-  box-shadow: 0 4px 24px rgba(2,40,58,0.08);
-  padding: 2rem 1.5rem;
-  text-align: center;
-  font-size: 1.15rem;
-  font-weight: 500;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  transform: translateX(-50%);
-}
-
-/* Restore background for .reason-card and .why-card if needed */
-.reason-card { background: #e0f7fa; }
-.why-card { background: #fff3e0; }
-
-/* Only .stacked-card.hero-card remains as a centered card */
-
-/* Responsive for mobile */
-@media (max-width: 700px) {
-  .stacked-card {
-    max-width: 98vw;
-    padding: 1.2rem 0.5rem;
-  }
-  .explore-row {
-    flex-direction: column;
-    gap: 0.7rem;
-  }
-  .explore-item {
-    min-width: 0;
-    width: 100%;
-  }
+.home p {
+  color: #666;
 }

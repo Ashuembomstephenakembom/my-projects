@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './layout/Navbar';
+import Footer from './layout/Footer';
 import './App.css';
 // Import all page components
 import Home from './pages/Home';
@@ -13,32 +14,34 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
+import Tools from './pages/Tools';
 
 // App is the root component of the application
-// It renders the Navbar and the main content area with routing
+// It uses a flex column layout for a sticky footer
 function App() {
   return (
     <Router>
-      {/* Site-wide navigation bar */}
-      <Navbar />
-      {/* Main content area with routes */}
-      {/* Add marginTop to prevent content from hiding under the fixed navbar (adjust if navbar height changes) */}
-      <main style={{ padding: '2rem', marginTop: '70px' }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/ebook-library" element={<EbookLibrary />} />
-          <Route path="/learn-forex" element={<LearnForex />} />
-          <Route path="/asat-concept" element={<ASATConcept />} />
-          <Route path="/brokers-prop-firms" element={<BrokersPropFirms />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/vip-blog" element={<VIPBlog />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/profile" element={<Profile />} />
-          {/* Add more routes as needed */}
-        </Routes>
-      </main>
+      <div className="app-root"> {/* Flex column parent for sticky footer */}
+        <Navbar />
+        <main className="main-content"> {/* Main content grows to fill space */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/ebook-library" element={<EbookLibrary />} />
+            <Route path="/learn-forex" element={<LearnForex />} />
+            <Route path="/asat-concept" element={<ASATConcept />} />
+            <Route path="/brokers-prop-firms" element={<BrokersPropFirms />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/vip-blog" element={<VIPBlog />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/tools" element={<Tools />} />
+            {/* Add more routes as needed */}
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }
