@@ -1,248 +1,198 @@
 import React from 'react';
-import TL5Image from '../assets/TL5.jpeg'; // Import the background image
-
-// ===============================
-// Home Page - TraderLibrary5
-// ===============================
-// This page is divided into 5 main sections:
-// 1. Hero/Welcome Section
-// 2. Reason Section
-// 3. Why We Exist Section
-// 4. Explore Our Resources
-// 5. Latest Blog Posts
-// ===============================
+import TL5Image from '../assets/TL5.jpeg';
 
 const Home = () => {
+  // ===============================
+  // OLD HOMEPAGE CONTENT (commented out for backup)
+  // ===============================
+  /*
+  <div className="home page-container">
+    ... (old homepage JSX goes here, excluding import/export)
+  </div>
+  */
+  // ===============================
+  // END OLD HOMEPAGE CONTENT
+  // ===============================
+
   return (
-    <div className="home">
-      {/* 1. Hero/Welcome Section - full width */}
-      <section className="hero-section homepage-card">
-        {/* Headline split into two lines for emphasis */}
+    <div className="home page-container">
+      {/* HERO SECTION – WELCOME */}
+      <section className="hero-section homepage-card" style={{textAlign: 'center'}}>
         <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#003049', marginBottom: '1rem', lineHeight: 1.2 }}>
           Welcome to TraderLibrary5<br />
-          <span style={{ fontSize: '2rem', fontWeight: 500, color: '#005580', fontStyle: 'italic' }}>Learn. Practice. Grow.</span>
+          <span style={{ fontSize: '2rem', fontWeight: 500, color: '#005580', fontStyle: 'italic' }}>Learn. Practice. Grow</span>
+          <span style={{ color: '#005580', fontWeight: 400 }}>
+            <span style={{fontStyle: 'italic'}}> with clarity.</span>
+          </span>
         </h1>
-        {/* Short, inviting subtext */}
-        <div style={{ maxWidth: 600, margin: '0 auto 2rem auto', textAlign: 'left', color: '#003049', fontSize: '1.05rem', lineHeight: 1.7 }}>
-          <p style={{ marginBottom: '1rem' }}>
-            Whether you're a beginner, intermediate, or pro trader, TraderLibrary5 is your go-to platform for mastering Forex trading.
-          </p>
-          <p style={{ marginBottom: '0.7rem' }}>We provide:</p>
-          <ul style={{ marginLeft: '1.2rem', marginBottom: '1rem', color: '#222', fontSize: '1rem' }}>
-            <li>Free and premium ebooks</li>
-            <li>Embedded video lessons</li>
-            <li>Powerful trading tools</li>
-            <li>Daily market insights and signals</li>
-            <li>Prop firm and broker recommendations</li>
-            <li>Strategies to grow your trading skills with confidence</li>
+        <div style={{ maxWidth: 600, margin: '0 auto 2rem auto', color: '#003049', fontSize: '1.08rem', lineHeight: 1.7 }}>
+          <p>Whether you're a beginner, intermediate, or advanced trader,<br />
+          TraderLibrary5 is your trusted roadmap to mastering Forex step by step.</p>
+          <ul style={{ margin: '1.2rem 0', textAlign: 'left', display: 'inline-block', color: '#222', fontSize: '1rem', lineHeight: 1.7 }}>
+            <li> Free & premium ebooks</li>
+            <li> Simple video lessons</li>
+            <li> Real trading tools</li>
+            <li> Daily 8AM signals</li>
+            <li> Broker & prop firm help</li>
+            <li> Strategy & mindset training</li>
           </ul>
-          <p style={{ marginBottom: 0 }}>
-            Everything here is designed to help you learn at your own pace, avoid costly mistakes, and become the trader you aspire to be.
-          </p>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
           <button className="modern-btn" style={{background: '#02283a', color: '#ffc700'}}>Start Your Trading Journey</button>
-          <button className="modern-btn" style={{background: '#02283a', color: '#ffc700'}}>Browse Ebooks</button>
+          <button className="modern-btn" style={{background: '#02283a', color: '#ffc700'}}>Browse the Library</button>
         </div>
       </section>
 
-      {/* 2. Reason Section - full width */}
-      <section className="reason-section homepage-card">
-        {/* Section Title */}
+      {/* SECTION 1 – WHY TRADERLIBRARY5 EXISTS */}
+      <section className="reason-section homepage-card" style={{textAlign: 'center'}}>
         <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#003049', marginBottom: '1.5rem' }}>
-          The Reason Behind TraderLibrary5
-        </h2>
-        {/* Updated content */}
-        <p style={{
-          maxWidth: 700,
-          margin: '0 auto',
-          fontSize: '1.1rem',
-          color: '#222',
-          lineHeight: 1.7,
-          textAlign: 'center',
-        }}>
-          Too many aspiring traders dive into Forex without proper guidance  overwhelmed by conflicting strategies, market noise, and unrealistic promises.<br /><br />
-          <strong>TraderLibrary5 was created to be the solution.</strong><br /><br />
-          We exist to offer a focused, honest learning space where beginners and growing traders can cut through the confusion, master the basics, and gain true confidence in the markets.<br /><br />
-          Our mission is to empower you with clear education, practical tools, and trustworthy insights  so you can build your trading journey with purpose, not pressure.
-        </p>
-      </section>
-
-      {/* 3. Why We Exist Section - full width */}
-      <section className="why-section homepage-card">
-        {/* Section Title */}
-        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#003049', marginBottom: '2rem' }}>
           Why TraderLibrary5 Exists
         </h2>
-        {/* 4 Trust-Building Cards */}
-        <div style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          gap: '2rem',
-          margin: '0 auto',
-          maxWidth: 900,
-        }}>
-          {/* Card 1 */}
-          <div className="homepage-card" style={{flex: '1 1 250px', minWidth: 220, maxWidth: 280}}>
-            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 12, fontSize: '1.15rem' }}>
-              To Provide Free Trading Education
-            </h3>
-            <p style={{ color: '#222', fontSize: '1rem', lineHeight: 1.5 }}>
-              We simplify Forex through beginner-friendly ebooks, embedded video tutorials, and step-by-step lessons  so anyone can start learning without confusion or cost.
-            </p>
-          </div>
-          {/* Card 2 */}
-          <div className="homepage-card" style={{flex: '1 1 250px', minWidth: 220, maxWidth: 280}}>
-            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 12, fontSize: '1.15rem' }}>
-              To Help You Understand the Market
-            </h3>
-            <p style={{ color: '#222', fontSize: '1rem', lineHeight: 1.5 }}>
-              We break down daily market news, trends, and price movements in clear, simple English — no jargon, no fluff  just what you need to trade smarter.
-            </p>
-          </div>
-          {/* Card 3 */}
-          <div className="homepage-card" style={{flex: '1 1 250px', minWidth: 220, maxWidth: 280}}>
-            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 12, fontSize: '1.15rem' }}>
-              To Give You the Tools to Grow
-            </h3>
-            <p style={{ color: '#222', fontSize: '1rem', lineHeight: 1.5 }}>
-              From trading calculators to strategy guides, we equip you with the resources to practice, refine, and build your own profitable trading approach.
-            </p>
-          </div>
-          {/* Card 4 */}
-          <div className="homepage-card" style={{flex: '1 1 250px', minWidth: 220, maxWidth: 280}}>
-            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 12, fontSize: '1.15rem' }}>
-              To Support Traders at Every Level
-            </h3>
-            <p style={{ color: '#222', fontSize: '1rem', lineHeight: 1.5 }}>
-              Whether you're just starting or already experienced, TraderLibrary5 helps you stay consistent, disciplined, and updated in a fast-moving market.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Explore Our Resources Section - full width */}
-      <section className="explore-section homepage-card">
-        {/* Section Title */}
-        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#003049', marginBottom: '1.5rem' }}>
-          Explore TraderLibrary5
-        </h2>
-        {/* Section Description */}
-        <p style={{
-          maxWidth: 700,
-          margin: '0 auto 2.5rem auto',
-          fontSize: '1.1rem',
-          color: '#222',
-          lineHeight: 1.7,
-        }}>
-          At TraderLibrary5, we’ve thoughtfully organized everything you need to grow as a confident, skilled trader. Whether you're starting from scratch or refining your strategy, our curated sections are designed to support your journey — at your own pace, on your own terms.
+        <p style={{ maxWidth: 700, margin: '0 auto', fontSize: '1.1rem', color: '#222', lineHeight: 1.7 }}>
+          Too many traders dive into Forex with excitement only to feel overwhelmed by conflicting strategies, confusing content, and empty promises.<br /><br />
+          TraderLibrary5 was built to change that.<br /><br />
+          We’re here to provide a focused, step-by-step path that cuts through the noise and helps you grow with real tools, simple education, and consistent guidance.
         </p>
-        {/* Resource Cards */}
+        <div style={{ fontWeight: 'bold', color: '#003049', margin: '2rem 0 0.5rem 0', fontSize: '1.15rem' }}>Our Mission</div>
+        <p style={{ maxWidth: 700, margin: '0 auto', fontSize: '1.08rem', color: '#222', lineHeight: 1.7 }}>
+          To help traders learn with clarity, grow with confidence, and succeed with structure no hype, no confusion, just purpose-driven progress.
+        </p>
+      </section>
+
+      {/* SECTION 2 – WHAT MAKES US DIFFERENT */}
+      <section className="why-section homepage-card" style={{textAlign: 'center'}}>
+        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#003049', marginBottom: '2rem' }}>
+          Why TraderLibrary5 Stands Out
+        </h2>
         <div style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          gap: '2rem',
-          margin: '0 auto',
-          maxWidth: 1100,
-        }}>
-          {/* Ebook Library Card */}
-          <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 240}}>
-            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>
-              Ebook Library
-            </h3>
-            <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5, marginBottom: 10 }}>
-              Download both free and premium ebooks tailored to all experience levels from beginner fundamentals to advanced trading strategies.
+          display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', margin: '0 auto', maxWidth: 900
+        }}>,
+          <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 260}}>
+            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>Free Trading Education</h3>
+            <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5 }}>
+              No more information overload. We give you simple ebooks and videos that teach real concepts without hype designed for beginners who want clarity and results.
             </p>
           </div>
-          {/* Learn Forex Card */}
-          <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 240}}>
-            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>
-              Learn Forex
-            </h3>
-            <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5, marginBottom: 10 }}>
-              Watch easy-to-understand, practical video lessons embedded directly from YouTube to simplify your learning experience.
+          <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 260}}>
+            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>Clear Market Breakdown</h3>
+            <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5 }}>
+              Our daily 8AM updates explain what’s happening in the market in plain English so you can trade with confidence, not confusion.
             </p>
           </div>
-          {/* Trading Tools Card */}
-          <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 240}}>
-            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>
-              Trading Tools
-            </h3>
-            <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5, marginBottom: 10 }}>
-              Access ready-to-use tools, indicators, and quick-reference cheat sheets to support your daily trading decisions.
+          <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 260}}>
+            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>Practical Tools</h3>
+            <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5 }}>
+              We only offer tools you’ll actually use like trading calculators, cheat sheets, and indicators that simplify your decisions, not complicate them.
             </p>
           </div>
-          {/* ASA TCONCEPT Card */}
-          <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 240}}>
-            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>
-              ASA TCONCEPT
-            </h3>
-            <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5, marginBottom: 10 }}>
-              Explore our founder’s exclusive trading philosophy built on six precision-based models drawn from the monthly, weekly, and daily market structure.<br />
-              Gain insight into the personal strategies designed to deliver clarity, structure, and consistent trading performance.
-            </p>
-          </div>
-          {/* Blog Card */}
-          <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 240}}>
-            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>
-              Blog
-            </h3>
-            <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5, marginBottom: 10 }}>
-              Stay informed with expert tips, market news, and valuable insights shared regularly by our TraderLibrary5 team.
+          <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 260}}>
+            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>Support at Every Level</h3>
+            <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5 }}>
+              Wherever you are starting out, growing, or aiming for funding,TraderLibrary5 gives you structure, consistency, and guidance at every stage of the journey.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 5. Latest Blog Posts Section - full width */}
-      <section className="latest-blog-section homepage-card" style={{textAlign: 'center'}}>
-        {/* Section Title */}
-        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#003049', marginBottom: '1.5rem', textAlign: 'center' }}>
-          Latest Blog Posts
+      {/* SECTION 3 – EXPLORE THE ROADMAP */}
+      <section className="explore-section homepage-card" style={{textAlign: 'center'}}>
+        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#003049', marginBottom: '1.5rem' }}>
+          Explore TraderLibrary5  One Step at a Time
         </h2>
-        {/* Blog Post Cards (replace with dynamic content as needed) */}
         <div style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          gap: '2rem',
-          margin: '0 auto',
-          maxWidth: 1100,
-          textAlign: 'left',
+          display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', margin: '0 auto', maxWidth: 1100
         }}>
-          {/* Blog Post 1 */}
+          <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 240}}>
+            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>Ebook Library</h3>
+            <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5 }}>
+              Access a growing collection of ebooks covering Forex basics, risk management, strategy building, and trader psychology tailored to help you grow smarter.
+            </p>
+          </div>
+          <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 240}}>
+            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>Learn Forex</h3>
+            <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5 }}>
+              Skip the fluff and dive into clear, visual lessons. These embedded YouTube videos walk you through everything from beginner setups to real market structure.
+            </p>
+          </div>
+          <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 240}}>
+            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>Trading Tools</h3>
+            <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5 }}>
+              Whether it’s calculating your lot size or checking pip values, our tools are designed to give you instant clarity in your trades no extra downloads needed.
+            </p>
+          </div>
+          <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 240}}>
+            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>ASA TCONCEPT</h3>
+            <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5 }}>
+              Explore the founder’s personal strategy, built on 6 precision based models that interpret the market using monthly, weekly, and daily structure.
+            </p>
+          </div>
+          <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 240}}>
+            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>Blog</h3>
+            <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5 }}>
+              Stay sharp with posts that go beyond surface-level tips. We cover practical strategies, mindset training, and insights that help you grow sustainably.
+            </p>
+          </div>
+          <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 240}}>
+            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>VIP Blog</h3>
+            <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5 }}>
+              Serious about trading? Our VIP section gives you daily fundamental signals, in-depth technical outlooks, and advanced analysis on Gold, EURUSD, Oil, and more.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4 – TODAY’S SIGNAL */}
+      <section className="homepage-card" style={{textAlign: 'center'}}>
+        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#003049', marginBottom: '1.5rem' }}>
+          Today’s Signal  Updated Every 8AM
+        </h2>
+        <p style={{ maxWidth: 700, margin: '0 auto 2rem auto', fontSize: '1.1rem', color: '#222', lineHeight: 1.7 }}>
+          Fundamental signals on Gold, EURUSD, GBPUSD, and US Oil<br />
+          posted fresh each morning to guide your day.
+        </p>
+        <button className="modern-btn" style={{background: '#02283a', color: '#ffc700', marginTop: '-1rem'}}>View Today’s Signal</button>
+      </section>
+
+      {/* SECTION 5 – LATEST BLOG POSTS */}
+      <section className="latest-blog-section homepage-card" style={{textAlign: 'center'}}>
+        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#003049', marginBottom: '1.5rem', textAlign: 'center' }}>
+          Latest From Our Blog
+        </h2>
+        <div style={{
+          display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', margin: '0 auto', maxWidth: 1100, textAlign: 'left'
+        }}>
           <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 340}}>
-            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>
-              How to Start Trading Forex in 2025
-            </h3>
+            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>How to Start Trading Forex in 2025</h3>
             <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5, marginBottom: 10 }}>
-              A step-by-step guide for beginners. Learn the basics, avoid common mistakes, and start your journey with confidence.
+              A clear, step-by-step guide to help beginners avoid common mistakes and start trading with structure, not stress.
             </p>
             <button className="modern-btn" style={{background: '#02283a', color: '#ffc700'}}>Read More</button>
           </div>
-          {/* Blog Post 2 */}
           <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 340}}>
-            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>
-              Top 5 Forex Trading Tools for 2025
-            </h3>
+            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>Top 5 Trading Tools Every Trader Needs</h3>
             <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5, marginBottom: 10 }}>
-              Discover the must-have tools and calculators to make smarter trading decisions.
+              Cut through the clutter with this list of essential tools that actually improve your decision-making and save time.
             </p>
             <button className="modern-btn" style={{background: '#02283a', color: '#ffc700'}}>Read More</button>
           </div>
-          {/* Blog Post 3 */}
           <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 340}}>
-            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>
-              The Psychology of Successful Traders
-            </h3>
+            <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>Psychology of Successful Traders</h3>
             <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5, marginBottom: 10 }}>
-              Master your mindset and emotions to gain an edge in the markets.
+              Discover how mindset, emotional control, and discipline make the difference between winning and losing in the long run.
             </p>
             <button className="modern-btn" style={{background: '#02283a', color: '#ffc700'}}>Read More</button>
           </div>
         </div>
+      </section>
+
+      {/* FOUNDER'S NOTE */}
+      <section className="homepage-card" style={{textAlign: 'center', marginTop: '2.5rem', background: '#f5f7fa'}}>
+        <h3 style={{ fontWeight: 'bold', color: '#003049', fontSize: '1.15rem', marginBottom: 10 }}>FOUNDER'S NOTE</h3>
+        <blockquote style={{ fontStyle: 'italic', color: '#222', maxWidth: 700, margin: '0 auto 1.2rem auto', lineHeight: 1.7 }}>
+          "I built TraderLibrary5 to make trading clearer, simpler, and more guided<br />
+          because I was tired of all the noise. If that’s you too, welcome."
+        </blockquote>
+        <div style={{ fontWeight: 'bold', color: '#005580', fontSize: '1.1rem' }}>ASA TCONCEPT</div>
       </section>
     </div>
   );

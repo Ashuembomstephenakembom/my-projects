@@ -12,6 +12,6 @@ export default defineConfig({
     // Enable CORS for ngrok
     cors: true,
     // Allow all origins for development
-    origin: 'https://3dac30a2e1d7.ngrok-free.app'
+    origin: 'https://1416239c8b21.ngrok-free.app'
   }
 })

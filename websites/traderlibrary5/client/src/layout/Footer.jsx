@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // ===============================
 // Footer Component
 // ===============================
 // This component provides the main footer for the site.
 // It includes navigation sections, brand info, social links, and copyright.
+// Uses React Router Links for existing pages and regular anchor tags for future pages.
 // ===============================
 const Footer = () => {
   return (
@@ -20,18 +22,21 @@ const Footer = () => {
           <div className="footer-column">
             <h3>Learn Forex</h3>
             <ul>
-              <li><a href="/learn-forex">How to Trade</a></li>
+              {/* Existing pages - using React Router Links for smooth navigation */}
+              <li><Link to="/learn-forex">How to Trade</Link></li>
+              {/* Future pages - using regular anchor tags until pages are created */}
               <li><a href="/quizzes">Quizzes</a></li>
               <li><a href="/glossary">Glossary</a></li>
               <li><a href="/beginner-course">Beginner Course</a></li>
               <li><a href="/intermediate-course">Intermediate Course</a></li>
-              <li><a href="/asat-concept">ASA TCONCEPT</a></li>
+              <li><Link to="/asat-concept">ASA TCONCEPT</Link></li>
             </ul>
           </div>
 
           <div className="footer-column company">
             <h3>Company</h3>
             <ul>
+              {/* Future pages - using regular anchor tags until pages are created */}
               <li><a href="/about">About</a></li>
               <li><a href="/contact">Contact</a></li>
               <li><a href="/faq">FAQ</a></li>
@@ -44,12 +49,13 @@ const Footer = () => {
           <div className="footer-column">
             <h3>Forex Tools</h3>
             <ul>
-              <li><a href="/pip-calculator">Pip Calculator</a></li>
-              <li><a href="/position-calculator">Position Calculator</a></li>
-              <li><a href="/economic-calendar">Economic Calendar</a></li>
-              {/* <li><a href="/live-charts">Live Charts</a></li> */} {/* Removed Live Charts */}
-              <li><a href="/risk-calculator">Risk Calculator</a></li>
-              <li><a href="/margin-calculator">Margin Calculator</a></li>
+              {/* All tools now link to their own pages */}
+              <li><Link to="/tools/economic-calendar">Economic Calendar</Link></li>
+              <li><Link to="/tools/pip-calculator">Pip Calculator</Link></li>
+              <li><Link to="/tools/position-size-calculator">Position Size Calculator</Link></li>
+              <li><Link to="/tools/risk-reward-calculator">Risk to Reward Calculator</Link></li>
+              <li><Link to="/tools/margin-calculator">Margin Calculator</Link></li>
+              <li><Link to="/tools/currency-strength-meter">Currency Strength Meter</Link></li>
             </ul>
           </div>
         </div>

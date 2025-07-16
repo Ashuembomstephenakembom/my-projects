@@ -32,7 +32,8 @@ const Navbar = () => {
             <li><NavLink to="/ebook-library" onClick={handleLinkClick} className={({ isActive }) => isActive ? 'nav-active' : undefined}>Ebook Library</NavLink></li>
             <li><NavLink to="/learn-forex" onClick={handleLinkClick} className={({ isActive }) => isActive ? 'nav-active' : undefined}>Learn Forex</NavLink></li>
             <li><NavLink to="/asat-concept" onClick={handleLinkClick} className={({ isActive }) => isActive ? 'nav-active' : undefined}>ASA TCONCEPT</NavLink></li>
-            <li><NavLink to="/tools" onClick={handleLinkClick} className={({ isActive }) => isActive ? 'nav-active' : undefined}>Tools</NavLink></li>
+            {/* Tools link navigates to the Tools Home page */}
+            <li><Link to="/tools" onClick={handleLinkClick}>Tools</Link></li>
             <li><NavLink to="/brokers-prop-firms" onClick={handleLinkClick} className={({ isActive }) => isActive ? 'nav-active' : undefined}>Brokers & Prop Firms</NavLink></li>
             <li><NavLink to="/blog" onClick={handleLinkClick} className={({ isActive }) => isActive ? 'nav-active' : undefined}>Blog</NavLink></li>
             <li><NavLink to="/vip-blog" onClick={handleLinkClick} className={({ isActive }) => isActive ? 'nav-active' : undefined}>VIP Blog</NavLink></li>

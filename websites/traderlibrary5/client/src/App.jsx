@@ -15,6 +15,13 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import Tools from './pages/Tools';
+import PipCalculator from './pages/PipCalculator';
+import ToolsHome from './pages/ToolsHome';
+import EconomicCalendar from './pages/EconomicCalendar';
+import PositionSizeCalculator from './pages/PositionSizeCalculator';
+import RiskRewardCalculator from './pages/RiskRewardCalculator';
+import MarginCalculator from './pages/MarginCalculator';
+import CurrencyStrengthMeter from './pages/CurrencyStrengthMeter';
 
 // App is the root component of the application
 // It uses a flex column layout for a sticky footer
@@ -36,7 +43,13 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/tools" element={<Tools />} />
+            <Route path="/tools/pip-calculator" element={<PipCalculator />} />
+            <Route path="/tools" element={<ToolsHome />} />
+            <Route path="/tools/economic-calendar" element={<EconomicCalendar />} />
+            <Route path="/tools/position-size-calculator" element={<PositionSizeCalculator />} />
+            <Route path="/tools/risk-reward-calculator" element={<RiskRewardCalculator />} />
+            <Route path="/tools/margin-calculator" element={<MarginCalculator />} />
+            <Route path="/tools/currency-strength-meter" element={<CurrencyStrengthMeter />} />
             {/* Add more routes as needed */}
           </Routes>
         </main>

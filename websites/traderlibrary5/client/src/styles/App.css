@@ -126,3 +126,13 @@
   color: #3b82f6 !important;
   background: none !important;
 } 
+
+/* Add page container padding to offset fixed navbar */
+.page-container {
+  padding-top: 70px; /* Default for desktop */
+}
+@media (max-width: 700px) {
+  .page-container {
+    padding-top: 56px; /* Match mobile navbar height */
+  }
+} 

@@ -1,0 +1,79 @@
+/* ===============================
+   Economic Calendar Tool Page Styles
+   =============================== */
+
+.tool-page-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.tool-heading {
+  font-size: 2rem;
+  color: #02283a;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.tool-description {
+  font-size: 1.1rem;
+  color: #495057;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.tool-iframe-wrapper {
+  position: relative;
+  min-height: 600px;
+}
+
+.tool-iframe-wrapper iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  background: #f8f9fa;
+  display: block;
+}
+
+.iframe-fallback {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.iframe-fallback p {
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+.iframe-fallback a {
+  color: #3b82f6;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.iframe-fallback a:hover {
+  color: #02283a;
+}
+
+@media (max-width: 600px) {
+  .tool-page-container {
+    padding: 0.5rem;
+  }
+  .tool-heading {
+    font-size: 1.3rem;
+  }
+  .tool-iframe-wrapper iframe {
+    height: 350px;
+  }
+} 
