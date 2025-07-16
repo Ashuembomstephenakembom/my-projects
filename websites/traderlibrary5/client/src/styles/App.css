@@ -129,10 +129,30 @@
 
 /* Add page container padding to offset fixed navbar */
 .page-container {
-  padding-top: 70px; /* Default for desktop */
+  padding-top: 80px;
 }
 @media (max-width: 700px) {
   .page-container {
-    padding-top: 56px; /* Match mobile navbar height */
+    padding-top: 80px;
   }
+} 
+
+html {
+  scroll-padding-top: 80px; /* Prevents navbar from hiding content when scrolling to anchors */
+}
+
+.iframe-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+  overflow-x: auto; /* Prevent horizontal scroll issues */
+}
+
+section {
+  scroll-margin-top: 80px; /* Ensures anchor links don't hide content under navbar */
+} 
+
+.main-content,
+#page-container {
+  margin-top: 90px;
 } 
