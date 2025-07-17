@@ -64,7 +64,7 @@ const tools = [
 // ===============================
 // Renders the dashboard with all tool cards and navigation links.
 const ToolsHome = () => (
-  <div className="page-container">
+  <div className="page-container" style={{ marginTop: '0px', paddingTop: '80px' }}>
     <div className="tools-home-container">
       {/* Page Title and Intro */}
       <h1 className="tools-home-title">Forex Tools</h1>
@@ -78,7 +78,9 @@ const ToolsHome = () => (
             <div className="tool-icon">{tool.icon}</div>
             <h2 className="tool-name">{tool.name}</h2>
             <p className="tool-desc">{tool.description}</p>
-            <Link to={tool.path} className="tool-link">Go to Tool</Link>
+            <Link to={tool.path} style={{ textDecoration: 'none' }}>
+              <button className="modern-btn" style={{background: '#02283a', color: '#ffc700'}}>Go to Tool</button>
+            </Link>
           </div>
         ))}
       </div>

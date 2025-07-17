@@ -36,13 +36,12 @@ const Footer = () => {
           <div className="footer-column company">
             <h3>Company</h3>
             <ul>
-              {/* Future pages - using regular anchor tags until pages are created */}
-              <li><a href="/about">About</a></li>
-              <li><a href="/contact">Contact</a></li>
-              <li><a href="/faq">FAQ</a></li>
-              <li><a href="/subscribe">Subscribe</a></li>
-              <li><a href="/privacy">Privacy Policy</a></li>
-              <li><a href="/terms">Terms of Service</a></li>
+              <li><Link to="/info#about">About</Link></li>
+              <li><Link to="/info#contact">Contact</Link></li>
+              <li><Link to="/info#faq">FAQ</Link></li>
+              <li><Link to="/info#subscribe">Subscribe</Link></li>
+              <li><Link to="/info#privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/info#terms-of-service">Terms of Service</Link></li>
             </ul>
           </div>
 

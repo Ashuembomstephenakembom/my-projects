@@ -22,12 +22,17 @@ import PositionSizeCalculator from './pages/PositionSizeCalculator';
 import RiskRewardCalculator from './pages/RiskRewardCalculator';
 import MarginCalculator from './pages/MarginCalculator';
 import CurrencyStrengthMeter from './pages/CurrencyStrengthMeter';
+import Info from './pages/Info';
+import ScrollToHash from './components/ScrollToHash';
+import ScrollToTop from './components/ScrollToTop';
 
 // App is the root component of the application
 // It uses a flex column layout for a sticky footer
 function App() {
   return (
     <Router>
+      <ScrollToTop />
+      <ScrollToHash />
       <div className="app-root"> {/* Flex column parent for sticky footer */}
         <Navbar />
         <main className="main-content"> {/* Main content grows to fill space */}
@@ -51,6 +56,7 @@ function App() {
             <Route path="/tools/margin-calculator" element={<MarginCalculator />} />
             <Route path="/tools/currency-strength-meter" element={<CurrencyStrengthMeter />} />
             {/* Add more routes as needed */}
+            <Route path="/info" element={<Info />} />
           </Routes>
         </main>
         <Footer />

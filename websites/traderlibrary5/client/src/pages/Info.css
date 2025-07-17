@@ -1,0 +1,70 @@
+.info-page {
+  background: #f9fafb;
+  color: #222;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem 1.2rem 3rem 1.2rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.info-page h1 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.3rem;
+  color: #003049;
+  letter-spacing: 0.5px;
+}
+
+.info-page section {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px 0 rgba(0,0,0,0.04);
+  margin-bottom: 2.5rem;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  transition: box-shadow 0.2s;
+}
+
+.info-page section:hover {
+  box-shadow: 0 4px 18px 0 rgba(0,48,73,0.10);
+}
+
+.info-page h2 {
+  color: #003049;
+  font-size: 1.45rem;
+  margin-bottom: 1.1rem;
+  border-left: 4px solid #669bbc;
+  padding-left: 0.7rem;
+  font-weight: 600;
+}
+
+.info-page p {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .info-page {
+    padding: 1.2rem 0.3rem 2rem 0.3rem;
+  }
+  .info-page section {
+    padding: 1.2rem 0.7rem 1rem 0.7rem;
+  }
+  .info-page h1 {
+    font-size: 1.4rem;
+  }
+  .info-page h2 {
+    font-size: 1.1rem;
+    padding-left: 0.4rem;
+  }
+  .info-page p {
+    font-size: 0.98rem;
+  }
+}
+
+/* Add smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+} 
