@@ -2,7 +2,7 @@ import React from 'react';
 import './PipCalculator.css';
 
 const PipCalculator = () => (
-  <div className="page-container" style={{ marginTop: '70px', paddingTop: '80px' }}>
+  <div className="page-container" style={{ marginTop: '10px', paddingTop: '80px' }}>
     <h1 className="tool-heading">Pip Calculator</h1>
     <section className="tool-section">
       <p className="tool-intro" style={{ fontSize: '1.13rem', color: '#222', marginBottom: '1.2rem', textAlign: 'center' }}>
