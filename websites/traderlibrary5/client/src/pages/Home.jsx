@@ -1,3 +1,18 @@
+// ===========================================
+// Home.jsx - Main Landing Page Component
+// ===========================================
+// This is the primary landing page for TraderLibrary5aturing:
+// - Hero section with welcome message and key features
+// - Mission statement and value proposition
+// - Feature highlights and differentiators
+// - Roadmap exploration section
+// - Daily signal preview
+// - Latest blog posts showcase
+// - Founder's note
+//
+// The page uses inline styles for consistent branding and responsive design.
+// All content is structured in clear sections with semantic HTML.
+
 import React from 'react';
 import TL5Image from '../assets/TL5.jpeg';
 
@@ -16,7 +31,14 @@ const Home = () => {
 
   return (
     <div className="home page-container">
-      {/* HERO SECTION – WELCOME */}
+      {/* ===========================================
+          HERO SECTION – WELCOME & VALUE PROPOSITION
+          ===========================================
+          This section introduces visitors to TraderLibrary5 with:
+          - Compelling headline with brand messaging
+          - Key features list for quick understanding
+          - Call-to-action buttons for user engagement
+      */}
       <section className="hero-section homepage-card" style={{textAlign: 'center'}}>
         <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#003049', marginBottom: '1rem', lineHeight: 1.2 }}>
           Welcome to TraderLibrary5<br />
@@ -43,7 +65,14 @@ const Home = () => {
         </div>
       </section>
 
-      {/* SECTION 1 – WHY TRADERLIBRARY5 EXISTS */}
+      {/* ===========================================
+          SECTION 1 WHY TRADERLIBRARY5EXISTS
+          ===========================================
+          This section explains the problem we solve and our mission:
+          - Addresses common pain points in forex education
+          - Presents our solution and approach
+          - Defines our mission statement
+      */}
       <section className="reason-section homepage-card" style={{textAlign: 'center'}}>
         <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#003049', marginBottom: '1.5rem' }}>
           Why TraderLibrary5 Exists
@@ -59,14 +88,21 @@ const Home = () => {
         </p>
       </section>
 
-      {/* SECTION 2 – WHAT MAKES US DIFFERENT */}
+      {/* ===========================================
+          SECTION2– WHAT MAKES US DIFFERENT
+          ===========================================
+          This section highlights our unique value propositions:
+          - Four key differentiators in card layout
+          - Each card explains a specific benefit
+          - Responsive grid layout for mobile/desktop
+      */}
       <section className="why-section homepage-card" style={{textAlign: 'center'}}>
         <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#003049', marginBottom: '2rem' }}>
           Why TraderLibrary5 Stands Out
         </h2>
         <div style={{
           display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', margin: '0 auto', maxWidth: 900
-        }}>,
+        }}>
           <div className="homepage-card" style={{flex: '1 1 220px', minWidth: 200, maxWidth: 260}}>
             <h3 style={{ color: '#003049', fontWeight: 'bold', marginBottom: 10, fontSize: '1.1rem' }}>Free Trading Education</h3>
             <p style={{ color: '#333', fontSize: '0.98rem', lineHeight: 1.5 }}>
@@ -94,7 +130,14 @@ const Home = () => {
         </div>
       </section>
 
-      {/* SECTION 3 – EXPLORE THE ROADMAP */}
+      {/* ===========================================
+          SECTION 3– EXPLORE THE ROADMAP
+          ===========================================
+          This section showcases all main features/sections:
+          - Six feature cards in responsive grid
+          - Each card describes a specific section of the platform
+          - Encourages exploration of different content areas
+      */}
       <section className="explore-section homepage-card" style={{textAlign: 'center'}}>
         <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#003049', marginBottom: '1.5rem' }}>
           Explore TraderLibrary5  One Step at a Time
@@ -141,7 +184,14 @@ const Home = () => {
         </div>
       </section>
 
-      {/* SECTION 4 – TODAY’S SIGNAL */}
+      {/* ===========================================
+          SECTION 4 – TODAY'S SIGNAL
+          ===========================================
+          This section promotes the daily signal feature:
+          - Highlights the 8AM update schedule
+          - Lists the main currency pairs covered
+          - Includes call-to-action button
+      */}
       <section className="homepage-card" style={{textAlign: 'center'}}>
         <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#003049', marginBottom: '1.5rem' }}>
           Today’s Signal  Updated Every 8AM
@@ -153,7 +203,14 @@ const Home = () => {
         <button className="modern-btn" style={{background: '#02283a', color: '#ffc700', marginTop: '-1rem'}}>View Today’s Signal</button>
       </section>
 
-      {/* SECTION 5 – LATEST BLOG POSTS */}
+      {/* ===========================================
+          SECTION 5 – LATEST BLOG POSTS
+          ===========================================
+          This section showcases recent blog content:
+          - Three featured blog posts in card layout
+          - Each card has title, excerpt, and read more button
+          - Demonstrates the quality and variety of content
+      */}
       <section className="latest-blog-section homepage-card" style={{textAlign: 'center'}}>
         <h2 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#003049', marginBottom: '1.5rem', textAlign: 'center' }}>
           Latest From Our Blog
@@ -185,7 +242,14 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FOUNDER'S NOTE */}
+      {/* ===========================================
+          FOUNDER'S NOTE
+          ===========================================
+          This section adds a personal touch with:
+          - Quote from the founder (ASA TCONCEPT)
+          - Personal connection to the platform's mission
+          - Styled as a highlighted blockquote
+      */}
       <section className="homepage-card" style={{textAlign: 'center', marginTop: '2.5rem', background: '#f5f7fa'}}>
         <h3 style={{ fontWeight: 'bold', color: '#003049', fontSize: '1.15rem', marginBottom: 10 }}>FOUNDER'S NOTE</h3>
         <blockquote style={{ fontStyle: 'italic', color: '#222', maxWidth: 700, margin: '0 auto 1.2rem auto', lineHeight: 1.7 }}>

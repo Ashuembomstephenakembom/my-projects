@@ -1,6 +1,18 @@
 import React from 'react';
 import './RiskRewardCalculator.css';
 
+function SASharesRiskRewardCalculator() {
+  return (
+    <iframe
+      src="https://sashares.co.za/widgets/risk-reward-calculator-widget?color=grey"
+      style={{ border: 'none', width: '100%', height: '926px' }}
+      frameBorder="0"
+      scrolling="no"
+      title="SAShares Risk Reward Calculator"
+    />
+  );
+}
+
 const RiskRewardCalculator = () => (
   <div className="page-container" style={{ marginTop: '10px', paddingTop: '80px' }}>
     <h1 className="tool-heading">Risk to Reward Calculator</h1>
@@ -23,20 +35,24 @@ const RiskRewardCalculator = () => (
         </ul>
       </div>
     </section>
-    <div className="iframe-container">
-      <iframe
-        src="https://www.myfxbook.com/forex-calculators/risk-reward-calculator"
-        title="Risk to Reward Calculator"
-        width="100%"
-        height="600"
-        frameBorder="0"
-        allowFullScreen
-        loading="lazy"
-      />
-      <div className="iframe-fallback">
-        <p>If the calculator doesn't load, <a href="https://www.myfxbook.com/forex-calculators/risk-reward-calculator" target="_blank" rel="noopener noreferrer">click here to open in a new tab</a>.</p>
-      </div>
+    {/* SAShares Risk Reward Calculator Widget - Start */}
+    <div 
+      className="iframe-container" 
+      style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        marginBottom: 'auto', 
+        maxWidth: '1000px',
+        width: '100%', 
+        padding: '0 20px',
+        borderRadius: '8px',
+        overflow: 'hidden'
+      }}
+    >
+      <SASharesRiskRewardCalculator />
     </div>
+    {/* SAShares Risk Reward Calculator Widget - End */}
   </div>
 );
 

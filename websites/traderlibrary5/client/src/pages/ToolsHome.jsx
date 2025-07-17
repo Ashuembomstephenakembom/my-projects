@@ -1,12 +1,25 @@
+// ===========================================
+// ToolsHome.jsx - Tools Dashboard Page
+// ===========================================
+// This page lists all available Forex trading tools in TraderLibrary5.
+// Each tool is displayed as a card with:
+//   - Name and icon
+//   - Short description
+//   - Link to the dedicated tool page
+//
+// The tools array can be easily extended to add more tools in the future.
+// The layout is responsive and styled via ToolsHome.css.
+//
+// Usage: Displayed at /tools route. Provides navigation to all calculators and indicators.
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './ToolsHome.css';
 
 // ===============================
-// Tools Home Page (Dashboard)
+// Tools Data Array
 // ===============================
-// Lists all Forex tools as cards with name, description, and a Go to Tool button
-// ===============================
+// Each object represents a tool with its name, icon, route path, and description.
 const tools = [
   {
     name: 'Economic Calendar',
@@ -46,13 +59,19 @@ const tools = [
   }
 ];
 
+// ===============================
+// ToolsHome Component
+// ===============================
+// Renders the dashboard with all tool cards and navigation links.
 const ToolsHome = () => (
   <div className="page-container">
     <div className="tools-home-container">
+      {/* Page Title and Intro */}
       <h1 className="tools-home-title">Forex Tools</h1>
       <p className="tools-home-intro">
         Welcome to the TraderLibrary5 Forex Tools section. Here you'll find powerful calculators, live charts, and indicators to help you trade smarter and manage risk effectively.
       </p>
+      {/* Tools List Section */}
       <div className="tools-list">
         {tools.map((tool) => (
           <div className="tool-card" key={tool.name}>

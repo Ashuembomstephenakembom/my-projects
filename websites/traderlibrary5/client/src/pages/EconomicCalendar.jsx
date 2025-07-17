@@ -23,23 +23,41 @@ const EconomicCalendar = () => (
         </ul>
       </div>
     </section>
-    <div className="iframe-container">
+    {/* myfxbook.com Economic Calendar Widget - Start */}
+    <div className="iframe-container" style={{ width: '100%', minHeight: 600, margin: '0 auto', maxWidth: 900 }}>
       <iframe
-        src="https://www.forexfactory.com/calendar/"
+        src="https://widget.myfxbook.com/widget/calendar.html?lang=en&impacts=0,1,2,3&symbols=AUD,CAD,CHF,CNY,EUR,GBP,JPY,NZD,USD"
+        style={{ border: 0, width: '100%', height: 600, borderRadius: 8, overflow: 'auto' }}
         title="Economic Calendar"
-        width="100%"
-        height="600"
         frameBorder="0"
-        allowFullScreen
         loading="lazy"
-      />
-      <div className="iframe-fallback">
-        <p>If the calendar doesn't load, <a href="https://www.forexfactory.com/calendar/" target="_blank" rel="noopener noreferrer">click here to open in a new tab</a>.</p>
-      </div>
-      <div style={{textAlign: 'center', marginTop: '0.7rem'}}>
-        <a href="https://www.forexfactory.com/calendar/" target="_blank" rel="noopener noreferrer" style={{color: '#3b82f6', fontWeight: 500, textDecoration: 'underline'}}>Open Economic Calendar on ForexFactory</a>
+        allowFullScreen
+      ></iframe>
+      <div style={{ marginTop: 10 }}>
+        <div
+          style={{
+            width: 'fit-content',
+            margin: 'auto',
+            fontFamily: 'roboto, sans-serif',
+            fontSize: 13,
+            color: '#666666',
+          }}
+        >
+          <a
+            href="https://www.myfxbook.com/forex-economic-calendar?utm_source=widget13&utm_medium=link&utm_campaign=copyright"
+            title="Economic Calendar"
+            className="myfxbookLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: '#666666', fontWeight: 'bold' }}
+          >
+            Economic Calendar
+          </a>{' '}
+          by Myfxbook.com
+        </div>
       </div>
     </div>
+    {/* myfxbook.com Economic Calendar Widget - End */}
   </div>
 );
 

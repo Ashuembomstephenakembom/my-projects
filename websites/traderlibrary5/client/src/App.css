@@ -1,3 +1,29 @@
+/* Force light mode - prevent dark mode from affecting the website */
+body {
+  background-color: white !important;
+  color: black !important;
+}
+
+/* Override dark mode settings */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  html {
+    background-color: white !important;
+  }
+  
+  #root {
+    background-color: white !important;
+  }
+  
+  .app-root {
+    background-color: white !important;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
