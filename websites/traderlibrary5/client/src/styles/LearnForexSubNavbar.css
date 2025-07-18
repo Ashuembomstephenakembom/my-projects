@@ -1,0 +1,75 @@
+.learn-forex-subnavbar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  background: #fff;
+  border-bottom: 2px solid #eee;
+  border-top: 1px solid #e0e0e0;
+  z-index: 1002;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 0.5rem 0 0.3rem 0;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.learn-forex-subnavbar-inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+.subnav-link-wrapper {
+  position: relative;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.learn-forex-subnavbar a {
+  color: #222;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.82rem;
+  padding: 6px 6px 8px 6px;
+  border-radius: 6px 6px 0 0;
+  transition: background 0.15s, color 0.15s;
+  display: inline-block;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.subnav-link-wrapper.hovered a,
+.learn-forex-subnavbar a:hover {
+  background: #f3f3f3;
+  color: #6c3fc2;
+  position: relative;
+}
+
+.subnav-arrow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -8px;
+  width: 18px;
+  height: 10px;
+  background: transparent;
+  z-index: 2;
+}
+
+.subnav-arrow::after {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 10px solid #f3f3f3;
+} 

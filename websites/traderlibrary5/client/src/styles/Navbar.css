@@ -1,10 +1,7 @@
 /* Navbar main wrapper styles - now fixed at the top */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100vw;
-  z-index: 1000;
   background: #02283a;
   border: 1px solid #3a5a6a;
   padding: 0;

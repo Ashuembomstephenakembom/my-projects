@@ -25,6 +25,13 @@ import CurrencyStrengthMeter from './pages/CurrencyStrengthMeter';
 import Info from './pages/Info';
 import ScrollToHash from './components/ScrollToHash';
 import ScrollToTop from './components/ScrollToTop';
+import HowToTrade from './pages/HowToTrade';
+import TechnicalAnalysis from './pages/TechnicalAnalysis';
+import FundamentalAnalysis from './pages/FundamentalAnalysis';
+import SentimentalAnalysis from './pages/SentimentalAnalysis';
+import BeginnerCourse from './pages/BeginnerCourse';
+import IntermediateCourse from './pages/IntermediateCourse';
+import AdvancedCourse from './pages/AdvancedCourse';
 
 // App is the root component of the application
 // It uses a flex column layout for a sticky footer
@@ -44,6 +51,13 @@ function App() {
             <Route path="/brokers-prop-firms" element={<BrokersPropFirms />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/vip-blog" element={<VIPBlog />} />
+            <Route path="/how-to-trade" element={<HowToTrade />} />
+            <Route path="/technical-analysis" element={<TechnicalAnalysis />} />
+            <Route path="/fundamental-analysis" element={<FundamentalAnalysis />} />
+            <Route path="/sentimental-analysis" element={<SentimentalAnalysis />} />
+            <Route path="/beginner-course" element={<BeginnerCourse />} />
+            <Route path="/intermediate-course" element={<IntermediateCourse />} />
+            <Route path="/advanced-course" element={<AdvancedCourse />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />

@@ -23,12 +23,13 @@ const Footer = () => {
             <h3>Learn Forex</h3>
             <ul>
               {/* Existing pages - using React Router Links for smooth navigation */}
-              <li><Link to="/learn-forex">How to Trade</Link></li>
-              {/* Future pages - using regular anchor tags until pages are created */}
-              <li><a href="/quizzes">Quizzes</a></li>
-              <li><a href="/glossary">Glossary</a></li>
-              <li><a href="/beginner-course">Beginner Course</a></li>
-              <li><a href="/intermediate-course">Intermediate Course</a></li>
+              <li><Link to="/how-to-trade">How to Trade</Link></li>
+              <li><Link to="/technical-analysis">Technical Analysis</Link></li>
+              <li><Link to="/fundamental-analysis">Fundamental Analysis</Link></li>
+              <li><Link to="/sentimental-analysis">Sentimental Analysis</Link></li>
+              <li><Link to="/beginner-course">Beginner Course</Link></li>
+              <li><Link to="/intermediate-course">Intermediate Course</Link></li>
+              <li><Link to="/advanced-course">Advanced Course</Link></li>
               <li><Link to="/asat-concept">ASA TCONCEPT</Link></li>
             </ul>
           </div>
@@ -48,7 +49,7 @@ const Footer = () => {
           <div className="footer-column">
             <h3>Forex Tools</h3>
             <ul>
-              {/* All tools now link to their own pages */}
+              {/* All tools now link to their own pages with /tools/ prefix */}
               <li><Link to="/tools/economic-calendar">Economic Calendar</Link></li>
               <li><Link to="/tools/pip-calculator">Pip Calculator</Link></li>
               <li><Link to="/tools/position-size-calculator">Position Size Calculator</Link></li>
@@ -78,7 +79,7 @@ const Footer = () => {
             {/* TikTok social link */}
             <a href="https://www.tiktok.com/@traderlibrary5" className="social-link" target="_blank" rel="noopener noreferrer">TikTok</a>
             {/* WhatsApp channel link */}
-            <a href="https://wa.me/2348012345678" className="social-link" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="https://whatsapp.com/channel/0029Vb67Gxz9sBI57JpYVk3a" className="social-link" target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </div>
         </div>
 
@@ -87,7 +88,7 @@ const Footer = () => {
           - Sits at the bottom of the footer
           - You can add more legal info or links here if needed
         */}
-        <div className="footer-copyright" style={{ fontSize: '0.85rem', color: '#ccc', marginTop: '0.5rem', padding: '0.5rem 0' }}>
+        <div className="footer-copyright" style={{ fontSize: '10px', color: '#aaa', marginTop: '0.05rem', padding: '0.05rem 0', lineHeight: '1.1' }}>
           <p>© 2025 TraderLibrary5. All rights reserved.</p>
         </div>
       </div>
