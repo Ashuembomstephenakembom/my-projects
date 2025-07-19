@@ -16,7 +16,6 @@ import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import Tools from './pages/Tools';
 import PipCalculator from './pages/PipCalculator';
-import ToolsHome from './pages/ToolsHome';
 import EconomicCalendar from './pages/EconomicCalendar';
 import PositionSizeCalculator from './pages/PositionSizeCalculator';
 import RiskRewardCalculator from './pages/RiskRewardCalculator';
@@ -63,7 +62,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/tools/pip-calculator" element={<PipCalculator />} />
-            <Route path="/tools" element={<ToolsHome />} />
+            <Route path="/tools" element={<EconomicCalendar />} />
             <Route path="/tools/economic-calendar" element={<EconomicCalendar />} />
             <Route path="/tools/position-size-calculator" element={<PositionSizeCalculator />} />
             <Route path="/tools/risk-reward-calculator" element={<RiskRewardCalculator />} />

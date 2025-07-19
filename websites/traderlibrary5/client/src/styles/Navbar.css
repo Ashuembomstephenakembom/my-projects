@@ -245,7 +245,386 @@
   }
 }
 */
+
+/* Mobile Submenu Overlay Styles */
+.mobile-submenu-overlay {
+  position: absolute;
+  top: 56px; /* Height of navbar */
+  left: 0;
+  width: 100vw;
+  background: #02283a;
+  z-index: 1000;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  border-top: 1px solid #3a5a6a;
+}
+
+.mobile-submenu-section {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #3a5a6a;
+  padding-bottom: 1rem;
+}
+
+.mobile-submenu-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.mobile-submenu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.mobile-submenu-header:hover {
+  color: #ffc700;
+}
+
+.mobile-submenu-arrow {
+  font-size: 0.8rem;
+  color: #ffc700;
+  transition: transform 0.2s;
+}
+
+.mobile-submenu-links {
+  padding-left: 1rem;
+  background: #1a3550;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.mobile-submenu-link {
+  display: block;
+  padding: 0.7rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #2a4a6a;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.mobile-submenu-link:last-child {
+  border-bottom: none;
+}
+
+.mobile-submenu-link:hover {
+  background-color: #2a4a6a;
+  color: #ffc700;
+}
+
+/* Ensure mobile submenu is only visible on mobile */
+@media (min-width: 701px) {
+  .mobile-submenu-overlay {
+    display: none;
+  }
+}
+
 /*
   The <div style={{ flex: 1 }}></div> in Navbar.jsx acts as a flex spacer,
   pushing the auth section to the far right and keeping links evenly spaced.
-*/ 
+*/
+
+/* Mobile Menu Overlay Styles */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 30, 50, 0.97); /* dark, slightly transparent for UX */
+  backdrop-filter: blur(2px);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  animation: slideDownMenu 0.35s cubic-bezier(0.4, 0.8, 0.4, 1) forwards;
+}
+@keyframes slideDownMenu {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 1.2rem 0.7rem 1.2rem;
+  border-bottom: 1px solid #2a4a6a;
+}
+.mobile-menu-logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.mobile-menu-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.1rem;
+  cursor: pointer;
+  padding: 0 0.2rem;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.mobile-menu-close:hover {
+  color: #ffb347;
+}
+.mobile-menu-auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7rem 0 0.7rem 0;
+  background: #1a3550;
+  border-bottom: 1.5px solid #2a4a6a;
+  gap: 0.7rem;
+}
+.mobile-menu-auth a {
+  flex: 1;
+  text-align: center;
+  background: #02283a;
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  border: 1px solid #2a4a6a;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 400;
+  margin: 0 0.2rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.mobile-menu-auth a:hover {
+  background: #2a4a6a;
+}
+.mobile-menu-links {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.7rem 0.5rem 1.2rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.mobile-menu-item {
+  width: 100%;
+  background: none;
+  border-bottom: 1px solid #2a4a6a;
+  padding: 0.2rem 0.7rem 0.2rem 0.7rem;
+}
+.mobile-menu-parent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.7rem 0 0.7rem 0;
+  user-select: none;
+}
+.mobile-menu-arrow {
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
+}
+.mobile-menu-item a,
+.mobile-menu-parent span {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  padding: 0.7rem 0;
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.mobile-menu-item a:hover {
+  background: #2a4a6a;
+}
+.mobile-menu-submenu.two-columns {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0.2rem 0 0.5rem 0;
+  gap: 0.2rem;
+}
+.mobile-menu-submenu .column {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+.mobile-menu-submenu .column a {
+  font-size: 0.92rem;
+  padding: 0.55rem 0.2rem;
+  margin: 0.05rem 0;
+  border-radius: 5px;
+  background: none;
+  color: #fff;
+  text-align: left;
+  transition: background 0.2s;
+}
+.mobile-menu-submenu .column a:hover {
+  background: #1a3550;
+}
+@media (max-width: 700px) {
+  .navbar-auth { display: none !important; }
+  .navbar-links { display: none !important; }
+  .navbar-hamburger { display: block !important; }
+}
+@media (min-width: 701px) {
+  .mobile-menu-overlay { display: none !important; }
+}
+
+/* Babypips-style Mobile Menu */
+.mobile-menu-babypips {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  z-index: 9999;
+  overflow-y: auto;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2.5rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.mobile-menu-babypips-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 1.2rem 0.7rem 1.2rem;
+  border-bottom: 1px solid #f5f5f5;
+  background: #02283a;
+}
+.mobile-menu-babypips-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffc700;
+  letter-spacing: 1px;
+}
+.mobile-menu-babypips-close {
+  background: none;
+  border: none;
+  color: #FFD600;
+  font-size: 2.1rem;
+  cursor: pointer;
+  padding: 0 0.2rem;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.mobile-menu-babypips-close:hover {
+  color: #FFD600;
+}
+.mobile-menu-babypips-auth {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 0.7rem 0.7rem 0.7rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #FFD600;
+  gap: 0.4rem;
+  border-bottom: 1px solid #f5f5f5;
+}
+.mobile-menu-babypips-signup {
+  color: #ffc700;
+  background: #fff;
+  border: 1.5px solid #ffc700;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0.2rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: background 0.18s, border 0.18s, color 0.18s;
+  display: inline-block;
+}
+.mobile-menu-babypips-signup:hover {
+  background: #fffbe6;
+  border-color: #ffb700;
+  color: #ffb700;
+}
+.mobile-menu-babypips-section {
+  width: 100%;
+  padding: 1.1rem 1.2rem 0.7rem 1.2rem;
+  border-bottom: 1px solid #f5f5f5;
+}
+.mobile-menu-babypips-header-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+.mobile-menu-babypips-submenu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+.mobile-menu-babypips-col {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+.mobile-menu-babypips-submenu a {
+  font-size: 0.7rem;
+  color: #222;
+  text-decoration: none;
+  padding: 0.22rem 0.08rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.mobile-menu-babypips-submenu a:hover {
+  background: #f2f2f2;
+}
+@media (max-width: 700px) {
+  .navbar-auth { display: none !important; }
+  .navbar-links { display: none !important; }
+  .navbar-hamburger { display: block !important; }
+}
+@media (min-width: 701px) {
+  .mobile-menu-babypips { display: none !important; }
+}
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Two-column grid for always-visible submenu links */
+.mobile-menu-babypips-submenu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1.5rem;
+  margin-top: 0.2rem;
+}
+.mobile-menu-babypips-submenu-grid a {
+  font-size: 0.89rem;
+  color: #222;
+  text-decoration: none;
+  padding: 0.38rem 0.15rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+  display: block;
+}
+.mobile-menu-babypips-submenu-grid a:hover {
+  background: #f2f2f2;
+}
+
+.mobile-menu-babypips-auth-separator {
+  color: #FFD600;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0.3rem;
+  user-select: none;
+} 
