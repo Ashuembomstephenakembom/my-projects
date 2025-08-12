@@ -185,9 +185,9 @@ const Footer = () => {
                 <FaEnvelope className="contact-icon" />
                 <div>
                   <span className="contact-label">Email</span>
-                  <a href="mailto:contact@asacoder.com" className="contact-value">
-                    contact@asacoder.com
-                  </a>
+                                     <a href="mailto:stephen@asaofficial.org" className="contact-value">
+                     stephen@asaofficial.org
+                   </a>
                 </div>
               </div>
               <div className="contact-item">
