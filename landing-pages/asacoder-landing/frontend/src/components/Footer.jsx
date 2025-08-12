@@ -8,8 +8,7 @@ import {
   FaEnvelope, 
   FaPhone,
   FaMapMarkerAlt,
-  FaArrowUp,
-  FaHeart
+  FaArrowUp
 } from 'react-icons/fa';
 import './Footer.css';
 
@@ -212,17 +211,11 @@ const Footer = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="copyright">
-              <p>
-                © {new Date().getFullYear()} ASACODER. All rights reserved. 
-                Made with <FaHeart className="heart-icon" /> by Ashuembom Stephen Akembom
-              </p>
-            </div>
-            <div className="footer-bottom-links">
-              <a href="#privacy" className="footer-bottom-link">Privacy Policy</a>
-              <span className="separator">•</span>
-              <a href="#terms" className="footer-bottom-link">Terms of Service</a>
-            </div>
+                         <div className="copyright">
+               <p>
+                 © {new Date().getFullYear()} ASACODER. All rights reserved.
+               </p>
+             </div>
           </motion.div>
         </div>
       </div>
