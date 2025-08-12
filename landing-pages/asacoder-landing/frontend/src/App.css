@@ -1,0 +1,99 @@
+/* App component styles for ASACODER landing page */
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  scroll-padding-top: 70px; /* Prevents navbar from hiding content when scrolling to anchors */
+}
+
+/* Main content area */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px; /* Account for fixed navbar height */
+}
+
+/* Section spacing */
+section {
+  padding: 4rem 0;
+}
+
+/* Section with background color */
+section.bg-light {
+  background-color: #f8f9fa;
+}
+
+section.bg-dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+/* Section with gradient background */
+section.bg-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+}
+
+/* Responsive section padding */
+@media (max-width: 768px) {
+  section {
+    padding: 2rem 0;
+  }
+}
+
+/* Container for sections */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    padding: 0 1rem;
+  }
+}
+
+/* Section headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Dark theme adjustments */
+section.bg-dark .section-title,
+section.bg-gradient .section-title {
+  color: #ffffff;
+}
+
+section.bg-dark .section-subtitle,
+section.bg-gradient .section-subtitle {
+  color: #cccccc;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+}

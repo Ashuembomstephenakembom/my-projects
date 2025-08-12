@@ -1,0 +1,28 @@
+{
+  "name": "asacoder-landing",
+  "version": "1.0.0",
+  "description": "ASACODER Personal Brand Landing Page",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:ngrok": "node start-ngrok.js",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "test:backend": "cd backend && node test-connection.js",
+    "setup": "npm run install:all && echo 'Setup complete! Run npm run dev to start both servers'"
+  },
+  "keywords": [
+    "react",
+    "nodejs",
+    "landing-page",
+    "portfolio"
+  ],
+  "author": "Ashuembom Stephen Akembom",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
