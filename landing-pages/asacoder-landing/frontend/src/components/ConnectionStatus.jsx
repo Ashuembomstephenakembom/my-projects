@@ -9,9 +9,17 @@ const ConnectionStatus = () => {
 
   const checkBackendConnection = async () => {
     try {
-      const backendUrl = window.location.hostname === '1fd2e51e55f7.ngrok-free.app' 
-        ? 'https://1fd2e51e55f7.ngrok-free.app:5000' 
-        : 'http://localhost:5000';
+      // PRODUCTION: Use environment variable or fallback to your domain
+      let backendUrl;
+      if (import.meta.env.VITE_API_URL) {
+        backendUrl = import.meta.env.VITE_API_URL;
+      } else if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        backendUrl = 'http://localhost:5000';
+      } else if (window.location.hostname.includes('ngrok-free.app')) {
+        backendUrl = `https://${window.location.hostname}:5000`;
+      } else {
+        backendUrl = 'https://api.asacoder.xyz';
+      }
       
       const response = await axios.get(`${backendUrl}/`, {
         timeout: 5000

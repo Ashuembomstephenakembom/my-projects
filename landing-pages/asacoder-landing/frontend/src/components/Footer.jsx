@@ -54,7 +54,7 @@ const Footer = () => {
                 <li><a href="#services">Services</a></li>
                 <li><a href="#process">Process</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="https://asacoder.xyz/privacy-policy">Privacy Policy</a></li>
               </ul>
             </div>
 
@@ -66,9 +66,9 @@ const Footer = () => {
                   <FaWhatsapp className="contact-icon whatsapp-icon" />
                   <span className="contact-text">+237 653 180 273</span>
                 </a>
-                <a href="mailto:stephen@asaofficial.org" className="contact-item">
+                <a href="mailto:contact@asacoder.xyz" className="contact-item">
                   <FaEnvelope className="contact-icon email-icon" />
-                  <span className="contact-text">stephen@asaofficial.org</span>
+                  <span className="contact-text">contact@asacoder.xyz</span>
                 </a>
                 <a href="https://maps.google.com/?q=Douala,Cameroon" className="contact-item" target="_blank" rel="noopener noreferrer">
                   <FaMapMarkerAlt className="contact-icon location-icon" />
@@ -107,9 +107,9 @@ const Footer = () => {
               © {currentYear} <strong>ASACODER</strong> All rights reserved.
             </span>
             <span className="separator">|</span>
-            <a href="/terms-of-service.html" className="bottom-link">Terms of Service</a>
+            <a href="https://asacoder.xyz/terms-of-service" className="bottom-link">Terms of Service</a>
             <span className="separator">|</span>
-            <a href="/privacy-policy.html" className="bottom-link">Privacy Policy</a>
+            <a href="https://asacoder.xyz/privacy-policy" className="bottom-link">Privacy Policy</a>
           </div>
         </div>
       </div>

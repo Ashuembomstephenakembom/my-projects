@@ -18,20 +18,27 @@ const AdminPanel = () => {
   const [adminPassword, setAdminPassword] = useState('')
   const [isAuthenticated, setIsAuthenticated] = useState(false)
 
-  // Get backend URL
+  // Get backend URL with production support
   const getBackendUrl = () => {
-    const hostname = window.location.hostname
-    const protocol = window.location.protocol
+    // PRODUCTION: Use environment variable or fallback to your domain
+    if (import.meta.env.VITE_API_URL) {
+      return import.meta.env.VITE_API_URL;
+    }
     
+    // DEVELOPMENT: Check if we're in development
+    const hostname = window.location.hostname
     if (hostname === 'localhost' || hostname === '127.0.0.1') {
       return 'http://localhost:5000'
     }
     
+    // DEVELOPMENT: Check for ngrok tunnel
     if (hostname.includes('ngrok-free.app')) {
+      const protocol = window.location.protocol
       return `${protocol}//${hostname}:5000`
     }
     
-    return `${protocol}//${hostname}:5000`
+    // PRODUCTION: Fallback to your domain
+    return 'https://api.asacoder.xyz'
   }
 
   // Authentication

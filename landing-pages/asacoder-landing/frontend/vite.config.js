@@ -17,5 +17,19 @@ export default defineConfig({
   preview: {
     host: '0.0.0.0',
     port: 4173
+  },
+  // PRODUCTION: Build optimization
+  build: {
+    outDir: 'dist',
+    sourcemap: false, // Disable sourcemaps in production
+    minify: 'terser',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          animations: ['framer-motion']
+        }
+      }
+    }
   }
 })

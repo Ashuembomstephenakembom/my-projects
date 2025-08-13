@@ -1,155 +1,161 @@
 # ASACODER Landing Page
 
-A personal brand landing page for ASACODER (Ashuembom Stephen Akembom) showcasing skills, services, and contact information.
+A modern, responsive landing page for ASACODER with contact form functionality and admin panel.
 
-## 🚀 Quick Start
+## 🚀 Live Demo
 
-### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn
+- **Frontend**: https://asacoder.xyz
+- **Backend API**: https://api.asacoder.xyz
 
-### Installation & Setup
+## 🛠️ Tech Stack
 
-1. **Clone and navigate to the project:**
-   ```bash
-   cd landing-pages/asacoder-landing
-   ```
+### Frontend
+- **React 18** with Vite
+- **Framer Motion** for animations
+- **Tailwind CSS** for styling
+- **Axios** for API calls
 
-2. **Install all dependencies:**
-   ```bash
-   npm run setup
-   ```
-
-3. **Start both frontend and backend:**
-   ```bash
-   npm run dev
-   ```
-
-4. **Access your application:**
-   - Frontend: http://localhost:3000
-   - Backend API: http://localhost:5000
+### Backend
+- **Node.js** with Express.js
+- **MongoDB** (MongoDB Atlas)
+- **Nodemailer** for email functionality
+- **JWT** for authentication
+- **Helmet** for security headers
 
 ## 📁 Project Structure
 
 ```
 asacoder-landing/
-├── backend/                    # Node.js backend for contact form
-│   ├── server.js              # Express server
-│   ├── routes/                # API routes
-│   ├── controllers/           # Request handlers
-│   ├── models/                # Data models
-│   └── package.json           # Backend dependencies
-├── frontend/                  # React + Vite frontend
+├── frontend/                 # React frontend
 │   ├── src/
-│   │   ├── components/        # React components
-│   │   ├── App.jsx           # Main app component
-│   │   └── main.jsx          # Entry point
-│   ├── public/               # Static assets
-│   └── package.json          # Frontend dependencies
-└── package.json              # Root package.json for running both
+│   │   ├── components/      # React components
+│   │   ├── assets/         # Images and static files
+│   │   └── App.jsx         # Main app component
+│   ├── public/             # Public assets
+│   ├── vercel.json         # Vercel configuration
+│   └── vite.config.js      # Vite configuration
+├── backend/                 # Node.js backend
+│   ├── routes/             # API routes
+│   ├── middleware/         # Security middleware
+│   ├── models/             # MongoDB models
+│   ├── controllers/        # Route controllers
+│   ├── config/             # Database configuration
+│   ├── utils/              # Utility functions
+│   ├── Procfile            # Heroku configuration
+│   └── server.js           # Main server file
+├── PRODUCTION_DEPLOYMENT_GUIDE.md  # Complete deployment guide
+├── deploy-production.sh    # Linux/Mac deployment script
+├── deploy-production.bat   # Windows deployment script
+└── README.md               # This file
 ```
 
-## 🛠️ Available Scripts
+## 🚀 Quick Deployment
 
-### Root Level (from project root)
-- `npm run dev` - Start both frontend and backend in development mode
-- `npm run setup` - Install all dependencies for frontend and backend
-- `npm run test:backend` - Test backend connection
-- `npm run build` - Build frontend for production
+### Prerequisites
+- Node.js 18+ installed
+- MongoDB Atlas account
+- Vercel account (for frontend)
+- Heroku account (for backend)
+- Domain: `asacoder.xyz`
 
-### Frontend (from frontend directory)
-- `npm run dev` - Start Vite development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
+### 1. Local Setup
 
-### Backend (from backend directory)
-- `npm run dev` - Start backend with nodemon (auto-restart)
-- `npm start` - Start backend in production mode
-- `node test-connection.js` - Test backend endpoints
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd asacoder-landing
 
-## 🔧 Backend API
-
-### Endpoints
-
-- `GET /` - Health check endpoint
-- `POST /api/contact/submit` - Submit contact form
-
-### Contact Form Data Structure
-```json
-{
-  "name": "string (required)",
-  "email": "string (required, valid email)",
-  "message": "string (required)"
-}
+# Install dependencies
+npm install
+cd frontend && npm install
+cd ../backend && npm install
+cd ..
 ```
 
-### Response Format
-```json
-{
-  "success": true,
-  "message": "Thank you for your message! I will get back to you soon.",
-  "data": {
-    "name": "string",
-    "email": "string",
-    "timestamp": "date"
-  }
-}
-```
+### 2. Environment Variables
 
-## 🌐 Frontend Features
-
-- **Responsive Design** - Works on all devices
-- **Smooth Animations** - Framer Motion animations
-- **Contact Form** - Integrated with backend API
-- **Social Links** - Direct links to your profiles
-- **Professional Branding** - ASACODER logo and styling
-
-## 🔗 Social Media Links
-
-- **WhatsApp**: https://wa.me/237653180273
-- **Telegram**: https://t.me/ASACODER
-- **LinkedIn**: https://www.linkedin.com/in/ashuembom-stephen-akembom-b84302260/
-- **GitHub**: https://github.com/Ashuembomstephenakembom
-
-## 🐛 Troubleshooting
-
-### Backend Connection Issues
-1. Make sure backend is running: `cd backend && npm run dev`
-2. Check if port 5000 is available
-3. Test connection: `npm run test:backend`
-
-### Frontend Issues
-1. Make sure all dependencies are installed: `npm run setup`
-2. Check if port 3000 is available
-3. Clear browser cache and restart dev server
-
-### CORS Issues
-- Backend is configured to accept requests from http://localhost:3000
-- If using different ports, update CORS_ORIGIN in backend/.env
-
-## 📝 Environment Variables
-
-Create a `.env` file in the backend directory:
+#### Frontend (.env)
 ```env
-PORT=5000
-NODE_ENV=development
-CORS_ORIGIN=http://localhost:3000
+VITE_API_URL=https://api.asacoder.xyz
 ```
 
-## 🚀 Deployment
+#### Backend (.env)
+```env
+NODE_ENV=production
+PORT=5000
+CORS_ORIGIN=https://asacoder.xyz
+MONGODB_URI=your-mongodb-atlas-connection-string
+EMAIL_USER=contact@asacoder.xyz
+EMAIL_PASS=your-gmail-app-password
+ADMIN_PASSWORD=your-secure-admin-password
+JWT_SECRET=your-super-secure-jwt-secret
+```
 
-### Frontend (Vercel/Netlify)
-1. Build the project: `npm run build`
-2. Deploy the `frontend/dist` folder
+### 3. Deploy to Production
 
-### Backend (Heroku/Railway)
-1. Deploy the `backend` folder
-2. Set environment variables
-3. Update frontend API URL to production backend URL
+#### Option A: Automated Scripts
+```bash
+# Linux/Mac
+./deploy-production.sh
 
-## 📞 Contact
+# Windows
+deploy-production.bat
+```
 
-For support or questions about this project, contact ASACODER:
-- Email: contact@asacoder.com
-- WhatsApp: +237 653 180 273
-- LinkedIn: Ashuembom Stephen Akembom
+#### Option B: Manual Deployment
+
+**Frontend (Vercel):**
+1. Push to GitHub
+2. Connect repository to Vercel
+3. Set environment variables in Vercel dashboard
+4. Deploy
+
+**Backend (Heroku):**
+1. Create Heroku app
+2. Set environment variables in Heroku dashboard
+3. Deploy using Heroku CLI or GitHub integration
+
+## 📋 Features
+
+- ✅ Responsive design (mobile-first)
+- ✅ Contact form with email notifications
+- ✅ Admin panel for message management
+- ✅ Security headers and CORS protection
+- ✅ Rate limiting and input validation
+- ✅ MongoDB integration
+- ✅ Production-ready build optimization
+- ✅ Custom domain support
+
+## 🔧 Development
+
+```bash
+# Start frontend (development)
+cd frontend
+npm run dev
+
+# Start backend (development)
+cd backend
+npm run dev
+```
+
+## 📚 Documentation
+
+For detailed deployment instructions, see [PRODUCTION_DEPLOYMENT_GUIDE.md](./PRODUCTION_DEPLOYMENT_GUIDE.md)
+
+## 🔒 Security
+
+- CORS protection
+- Rate limiting
+- Input validation
+- Security headers
+- JWT authentication
+- MongoDB injection protection
+
+## 📞 Support
+
+- **Email**: contact@asacoder.xyz
+- **Website**: https://asacoder.xyz
+
+## 📄 License
+
+This project is private and proprietary to ASACODER.

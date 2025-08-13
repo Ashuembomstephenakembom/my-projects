@@ -12,24 +12,11 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const NGROK_URL = 'https://476edd4dd8ed.ngrok-free.app';
+// PRODUCTION: Remove hardcoded ngrok URL
+// const NGROK_URL = 'https://476edd4dd8ed.ngrok-free.app';
 
-// Setup comprehensive security middleware
+// Setup comprehensive security middleware (includes CORS)
 setupSecurity(app);
-
-// CORS configuration for ngrok
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', NGROK_URL);
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  res.header('Access-Control-Allow-Credentials', true);
-  
-  if (req.method === 'OPTIONS') {
-    res.sendStatus(200);
-  } else {
-    next();
-  }
-});
 
 // Request size limiting
 app.use(limitRequestSize);
@@ -84,7 +71,7 @@ app.get('/admin', (req, res) => {
 // Start server
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Server running on port ${PORT}`);
-  console.log(`🌐 Accessible via: ${NGROK_URL}`);
+  console.log(`🌐 Production URL: https://api.asacoder.xyz`);
   console.log(`📊 MongoDB: ${process.env.MONGODB_URI ? 'Configured' : 'Not configured'}`);
   
   // Show database name from connection string if available

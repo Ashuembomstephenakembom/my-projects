@@ -25,23 +25,27 @@ const Contact = () => {
     }))
   }
 
-  // Get backend URL with better mobile support
+  // Get backend URL with production support
   const getBackendUrl = () => {
-    const hostname = window.location.hostname
-    const protocol = window.location.protocol
+    // PRODUCTION: Use environment variable or fallback to your domain
+    if (import.meta.env.VITE_API_URL) {
+      return import.meta.env.VITE_API_URL;
+    }
     
-    // Check if we're in development
+    // DEVELOPMENT: Check if we're in development
+    const hostname = window.location.hostname
     if (hostname === 'localhost' || hostname === '127.0.0.1') {
       return 'http://localhost:5000'
     }
     
-    // Check for ngrok tunnel
+    // DEVELOPMENT: Check for ngrok tunnel
     if (hostname.includes('ngrok-free.app')) {
+      const protocol = window.location.protocol
       return `${protocol}//${hostname}:5000`
     }
     
-    // For production or other environments, use the same hostname
-    return `${protocol}//${hostname}:5000`
+    // PRODUCTION: Fallback to your domain
+    return 'https://api.asacoder.xyz'
   }
 
   // Handle form submission
