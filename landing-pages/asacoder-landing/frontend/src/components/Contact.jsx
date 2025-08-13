@@ -114,7 +114,7 @@ ${message}
 Sent from ASACODER website contact form
     `)
     
-    const mailtoLink = `mailto:stephen@asaofficial.org?subject=${subject}&body=${body}`
+    const mailtoLink = `mailto:contact@asacoder.xyz?subject=${subject}&body=${body}`
     window.open(mailtoLink, '_blank')
   }
 
@@ -127,13 +127,13 @@ Sent from ASACODER website contact form
       link: 'https://wa.me/237653180273',
       color: '#25D366'
     },
-    {
-      icon: <FaEnvelope />,
-      title: 'Email',
-      value: 'stephen@asaofficial.org',
-      link: 'mailto:stephen@asaofficial.org',
-      color: '#EA4335'
-    },
+         {
+       icon: <FaEnvelope />,
+       title: 'Email',
+       value: 'contact@asacoder.xyz',
+       link: 'mailto:contact@asacoder.xyz',
+       color: '#EA4335'
+     },
     {
       icon: <FaLinkedin />,
       title: 'LinkedIn',
