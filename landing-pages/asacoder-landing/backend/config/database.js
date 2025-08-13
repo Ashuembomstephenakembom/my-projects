@@ -4,10 +4,9 @@ const mongoose = require('mongoose');
 // MongoDB connection function
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/asacoder_landing';
+    
+    const conn = await mongoose.connect(mongoURI);
 
     console.log(`✅ MongoDB Connected:`);
     console.log(`   Host: ${conn.connection.host}`);
@@ -17,7 +16,8 @@ const connectDB = async () => {
     return conn;
   } catch (error) {
     console.error('❌ MongoDB connection error:', error.message);
-    process.exit(1);
+    console.log('⚠️  Server will continue without database (demo mode)');
+    return null;
   }
 };
 

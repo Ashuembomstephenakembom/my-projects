@@ -1,7 +1,7 @@
 // Navbar component for ASACODER landing page
 // This component provides navigation and is sticky at the top
 import React, { useState, useEffect } from 'react'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { FaBars, FaTimes, FaCode } from 'react-icons/fa'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -46,7 +46,11 @@ const Navbar = () => {
       <div className="navbar-container">
         {/* Logo/Brand */}
         <div className="navbar-brand">
-          <span className="brand-text">ASACODER</span>
+          <div className="brand-logo">
+            <FaCode className="brand-icon" />
+            <span className="brand-text">ASACODER</span>
+          </div>
+          <span className="brand-tagline">Digital Solutions</span>
         </div>
 
         {/* Desktop Navigation */}

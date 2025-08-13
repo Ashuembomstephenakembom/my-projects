@@ -25,6 +25,25 @@ const Contact = () => {
     }))
   }
 
+  // Get backend URL with better mobile support
+  const getBackendUrl = () => {
+    const hostname = window.location.hostname
+    const protocol = window.location.protocol
+    
+    // Check if we're in development
+    if (hostname === 'localhost' || hostname === '127.0.0.1') {
+      return 'http://localhost:5000'
+    }
+    
+    // Check for ngrok tunnel
+    if (hostname.includes('ngrok-free.app')) {
+      return `${protocol}//${hostname}:5000`
+    }
+    
+    // For production or other environments, use the same hostname
+    return `${protocol}//${hostname}:5000`
+  }
+
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -32,35 +51,67 @@ const Contact = () => {
     setSubmitStatus(null)
 
     try {
-      // Send form data to backend
-      const backendUrl = window.location.hostname === '1fd2e51e55f7.ngrok-free.app' 
-        ? 'https://1fd2e51e55f7.ngrok-free.app:5000' 
-        : 'http://localhost:5000';
+      const backendUrl = getBackendUrl()
+      console.log('Attempting to connect to backend:', backendUrl)
       
       const response = await axios.post(`${backendUrl}/api/contact/submit`, formData, {
         headers: {
           'Content-Type': 'application/json',
         },
-        timeout: 10000 // 10 second timeout
+        timeout: 15000 // Increased timeout for mobile
       })
       
       if (response.data.success) {
         setSubmitStatus('success')
         setFormData({ name: '', email: '', message: '' })
+        console.log('Form submitted successfully:', response.data)
       } else {
         setSubmitStatus('error')
+        console.error('Backend returned error:', response.data)
       }
     } catch (error) {
       console.error('Error submitting form:', error)
+      
+      // More specific error handling
       if (error.code === 'ECONNREFUSED') {
         setSubmitStatus('error')
         console.log('Backend server is not running. Please start the backend server.')
+      } else if (error.code === 'ERR_NETWORK') {
+        setSubmitStatus('error')
+        console.log('Network error - check your internet connection')
+      } else if (error.code === 'ECONNABORTED') {
+        setSubmitStatus('error')
+        console.log('Request timeout - server might be slow')
+      } else if (error.response) {
+        // Server responded with error status
+        setSubmitStatus('error')
+        console.log('Server error:', error.response.status, error.response.data)
       } else {
         setSubmitStatus('error')
+        console.log('Unknown error occurred')
       }
     } finally {
       setIsSubmitting(false)
     }
+  }
+
+  // Fallback function for mobile devices when backend is not accessible
+  const handleMobileFallback = () => {
+    const { name, email, message } = formData
+    const subject = encodeURIComponent(`Contact from ${name} - ASACODER Website`)
+    const body = encodeURIComponent(`
+Name: ${name}
+Email: ${email}
+
+Message:
+${message}
+
+---
+Sent from ASACODER website contact form
+    `)
+    
+    const mailtoLink = `mailto:stephen@asaofficial.org?subject=${subject}&body=${body}`
+    window.open(mailtoLink, '_blank')
   }
 
   // Contact information - Updated to match ASACODER's contact methods
@@ -72,13 +123,13 @@ const Contact = () => {
       link: 'https://wa.me/237653180273',
       color: '#25D366'
     },
-                    {
-                  icon: <FaEnvelope />,
-                  title: 'Email',
-                  value: 'stephen@asaofficial.org',
-                  link: 'mailto:stephen@asaofficial.org',
-                  color: '#EA4335'
-                },
+    {
+      icon: <FaEnvelope />,
+      title: 'Email',
+      value: 'stephen@asaofficial.org',
+      link: 'mailto:stephen@asaofficial.org',
+      color: '#EA4335'
+    },
     {
       icon: <FaLinkedin />,
       title: 'LinkedIn',
@@ -159,7 +210,15 @@ const Contact = () => {
 
               {submitStatus === 'error' && (
                 <div className="form-message error">
-                  Sorry, there was an error sending your message. Please try again or contact me directly.
+                  <p>Sorry, there was an error sending your message.</p>
+                  <p>Please try again or contact me directly through the links below.</p>
+                  <button 
+                    onClick={handleMobileFallback}
+                    className="btn btn-secondary fallback-btn"
+                    style={{ marginTop: '1rem', fontSize: '0.9rem' }}
+                  >
+                    📧 Send via Email Instead
+                  </button>
                 </div>
               )}
 

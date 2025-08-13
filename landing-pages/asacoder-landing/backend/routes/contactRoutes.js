@@ -6,8 +6,9 @@ const {
   getAllContacts, 
   updateContactStatus 
 } = require('../controllers/contactController');
+const { validateContactForm, sanitizeInputs } = require('../middleware/validation');
 
-// POST route to handle contact form submissions
+// POST route to handle contact form submissions with validation
 router.post('/submit', submitContactForm);
 
 // GET route to fetch all contacts (for admin dashboard)

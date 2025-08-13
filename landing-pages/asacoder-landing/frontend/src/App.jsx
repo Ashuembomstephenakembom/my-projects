@@ -1,6 +1,7 @@
 // Main App component for ASACODER landing page
 // This component will contain all the sections of the landing page
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import './components/MobileAnimations.css'
 
@@ -11,10 +12,12 @@ import About from './components/About'
 import Services from './components/Services'
 import Process from './components/Process'
 import Contact from './components/Contact'
-import Footer from './components/Footer'
-import ConnectionStatus from './components/ConnectionStatus'
 
-function App() {
+import ConnectionStatus from './components/ConnectionStatus'
+import AdminPanel from './components/AdminPanel'
+
+// Main Landing Page Component
+const LandingPage = () => {
   return (
     <div className="App">
       {/* Navigation bar - fixed at the top */}
@@ -34,16 +37,26 @@ function App() {
         {/* Process section - how you work */}
         <Process />
         
-              {/* Contact section - contact form and information */}
-      <Contact />
-      
-      {/* Footer section */}
-      <Footer />
+        {/* Contact section - contact form and information */}
+        <Contact />
       </main>
+      
+
       
       {/* Connection Status (only in development) */}
       <ConnectionStatus />
     </div>
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/admin" element={<AdminPanel />} />
+      </Routes>
+    </Router>
   )
 }
 

@@ -1,11 +1,11 @@
 // Backend server for ASACODER landing page contact form
-// This file will handle the contact form submissions
+// This file will handle the contact form submissions with comprehensive security
 
 const express = require('express');
-const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
 const { connectDB } = require('./config/database');
+const { setupSecurity, validateInput, limitRequestSize } = require('./middleware/security');
 
 // Load environment variables
 dotenv.config();
@@ -13,24 +13,30 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// CORS configuration
-const corsOptions = {
-  origin: [
-    process.env.CORS_ORIGIN || 'http://localhost:3000',
-    'https://1fd2e51e55f7.ngrok-free.app', // Allow ngrok URL
-    'https://*.ngrok-free.app' // Allow any ngrok subdomain
-  ],
-  credentials: true,
-  optionsSuccessStatus: 200
-};
+// Setup comprehensive security middleware
+setupSecurity(app);
 
-// Middleware
-app.use(cors(corsOptions));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// Request size limiting
+app.use(limitRequestSize);
+
+// Body parsing middleware with size limits
+app.use(express.json({ limit: '1mb' }));
+app.use(express.urlencoded({ extended: true, limit: '1mb' }));
+
+// Input validation middleware
+app.use(validateInput);
 
 // Connect to MongoDB
-connectDB();
+connectDB().then(conn => {
+  if (conn) {
+    console.log('✅ Database connection successful');
+  } else {
+    console.log('⚠️  Running in demo mode without database');
+  }
+}).catch(err => {
+  console.log('⚠️  MongoDB connection failed, but server will continue running');
+  console.log('   This is normal for development without MongoDB');
+});
 
 // Routes
 app.use('/api/contact', require('./routes/contactRoutes'));
@@ -42,6 +48,16 @@ app.get('/', (req, res) => {
     message: 'ASACODER Landing Page Backend API',
     database: 'MongoDB Connected',
     timestamp: new Date().toISOString()
+  });
+});
+
+// Test contact form endpoint (without validation for debugging)
+app.post('/api/contact/test', (req, res) => {
+  console.log('Test contact form submission:', req.body);
+  res.json({
+    success: true,
+    message: 'Test endpoint working',
+    received: req.body
   });
 });
 
