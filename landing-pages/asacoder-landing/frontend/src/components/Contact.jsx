@@ -131,7 +131,7 @@ Sent from ASACODER website contact form
        icon: <FaEnvelope />,
        title: 'Email',
        value: 'contact@asacoder.xyz',
-       link: 'mailto:contact@asacoder.xyz',
+               link: 'mailto:stephen@asaofficial.org',
        color: '#EA4335'
      },
     {

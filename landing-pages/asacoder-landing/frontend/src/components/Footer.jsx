@@ -68,7 +68,7 @@ const Footer = () => {
                 </a>
                 <a href="mailto:contact@asacoder.xyz" className="contact-item">
                   <FaEnvelope className="contact-icon email-icon" />
-                  <span className="contact-text">contact@asacoder.xyz</span>
+                  <span className="contact-text">stephen@asaofficial.org</span>
                 </a>
                 <a href="https://maps.google.com/?q=Douala,Cameroon" className="contact-item" target="_blank" rel="noopener noreferrer">
                   <FaMapMarkerAlt className="contact-icon location-icon" />
