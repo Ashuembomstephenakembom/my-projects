@@ -111,13 +111,15 @@ const corsOptions = {
     if (!origin) return callback(null, true);
     
     const allowedOrigins = [
-      'http://localhost:3000',
-      'http://localhost:5173',
-      'http://127.0.0.1:3000',
-      'http://127.0.0.1:5173',
-      'https://asacoder.xyz',
-      'https://www.asacoder.xyz',
-      'https://*.ngrok-free.app'
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://127.0.0.1:3000',
+  'http://127.0.0.1:5173',
+  'https://asacoder.xyz',
+  'https://www.asacoder.xyz',
+  'https://api.asacoder.xyz',
+  'https://*.vercel.app', // Allow Vercel preview URLs
+  'https://*.ngrok-free.app' // Keep for development
     ];
     
     // Check if origin is in allowed list or is a localhost/ngrok URL

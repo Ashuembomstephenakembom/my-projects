@@ -17,7 +17,6 @@ const PORT = process.env.PORT || 5000;
 
 // Setup comprehensive security middleware (includes CORS)
 setupSecurity(app);
-
 // Request size limiting
 app.use(limitRequestSize);
 
