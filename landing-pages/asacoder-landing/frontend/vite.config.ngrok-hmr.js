@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Vite config specifically for ngrok - disables HMR to prevent connection issues
+// Vite config for ngrok with HMR disabled to prevent WebSocket issues
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3000,
+    port: 5173,
     host: '0.0.0.0', // Allow external network access
     open: false, // Don't auto-open browser
     cors: true, // Enable CORS for cross-origin requests
@@ -15,7 +15,7 @@ export default defineConfig({
       '476edd4dd8ed.ngrok-free.app',
       '.ngrok-free.app' // Allow any ngrok subdomain
     ],
-    hmr: false, // Completely disable HMR for ngrok
+    hmr: false, // Disable HMR for ngrok to prevent WebSocket issues
     watch: {
       usePolling: true // Use polling instead of file system events
     }
@@ -25,7 +25,7 @@ export default defineConfig({
     sourcemap: true
   },
   preview: {
-    port: 3000,
+    port: 4173,
     host: '0.0.0.0',
     open: false
   }

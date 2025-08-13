@@ -15,6 +15,7 @@ import Contact from './components/Contact'
 
 import ConnectionStatus from './components/ConnectionStatus'
 import AdminPanel from './components/AdminPanel'
+import Footer from './components/Footer'
 
 // Main Landing Page Component
 const LandingPage = () => {
@@ -45,6 +46,9 @@ const LandingPage = () => {
       
       {/* Connection Status (only in development) */}
       <ConnectionStatus />
+      
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }

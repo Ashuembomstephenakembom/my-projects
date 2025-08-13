@@ -278,10 +278,34 @@ Sent from ASACODER website contact form
                   <FaMapMarkerAlt className="map-icon" />
                   <p>Remote Services Available Worldwide</p>
                   <div className="service-regions">
-                    <span className="region-tag">Web Development</span>
-                    <span className="region-tag">Forex Training</span>
-                    <span className="region-tag">Digital Marketing</span>
-                    <span className="region-tag">ICT Training</span>
+                    <span 
+                      className="region-tag" 
+                      onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+                      style={{ cursor: 'pointer' }}
+                    >
+                      Web Development
+                    </span>
+                    <span 
+                      className="region-tag" 
+                      onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+                      style={{ cursor: 'pointer' }}
+                    >
+                      Forex Training
+                    </span>
+                    <span 
+                      className="region-tag" 
+                      onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+                      style={{ cursor: 'pointer' }}
+                    >
+                      Digital Marketing
+                    </span>
+                    <span 
+                      className="region-tag" 
+                      onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+                      style={{ cursor: 'pointer' }}
+                    >
+                      ICT Training
+                    </span>
                   </div>
                 </div>
               </div>

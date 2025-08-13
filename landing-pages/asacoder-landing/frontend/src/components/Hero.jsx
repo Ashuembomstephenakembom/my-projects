@@ -1,17 +1,10 @@
 // Hero component for ASACODER landing page
 // This is the first section visitors see - the main headline and call-to-action
 import React from 'react'
-import { FaArrowDown, FaGithub, FaLinkedin, FaTwitter, FaWhatsapp, FaTelegram } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaWhatsapp, FaTelegram } from 'react-icons/fa'
 import './Hero.css'
 
 const Hero = () => {
-  // Smooth scroll to next section
-  const scrollToNext = () => {
-    const aboutSection = document.getElementById('about')
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
 
   return (
     <section id="hero" className="hero">
@@ -77,11 +70,7 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Scroll indicator */}
-      <div className="hero-scroll" onClick={scrollToNext}>
-        <span>Scroll to explore</span>
-        <FaArrowDown className="scroll-arrow" />
-      </div>
+
     </section>
   )
 }

@@ -18,7 +18,7 @@ const About = () => {
       <div className="section-container">
         {/* Section header */}
         <div className="section-header">
-          <h2 className="section-title">Meet Ashuembom Stephen Akembom — Professional Web Developer & Digital Expert</h2>
+          <h2 className="section-title">Meet Ashuembom Stephen Akembom  Professional Web Developer & Digital Expert</h2>
           <p className="section-subtitle">
             Experienced full-stack developer and digital solutions specialist with expertise in React.js, Node.js, MongoDB, forex trading, and digital marketing
           </p>
